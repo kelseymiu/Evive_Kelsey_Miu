@@ -1,1 +1,12 @@
 # Evive_Kelsey_Miu
+
+**Project Goal:** The goal of this project was to design a menu ordering system that returns the items of an inputted order. Given a preset menu that takes orders for breakfast, lunch, and dinner each with a main, side, drink, and dessert (if applicable), the program returns an output of the name of the items in the order of: main, side, drink. The ordering system contains of rules specificed on the Evive Assessment spec. 
+The MenuOrdering class contains a private unordered_map that represents the preset menu. The keys are {"breakfast, "lunch", "dinner"} to represent the type of meal and each value is a vector of menu items for that meal. The class contains 5 methods:
+- MenuOrdering() initializes menu 
+- readItems() reads through string of items ordered seperated by commas, returns vector of ints storing quantities of main, side, drink, and dessert (if appropriate), or an empty vector if any item is out of range
+- checkValidInput() returns an error message if a main is missing, a side is missing, or an inappropriate amount of food is ordered
+- printOrder() returns an correctly displayed meal in ordering of main, side, drink
+- getMeal() processes user input and returns displayed order if the input is valid, or error message with reason 
+- inRange() is a helper function that returns wheter inputted item is on the menu
+
+**Design Choices:** I decided to make a seperate MenuOrdering class to store the preset menu in an unordered_map for its O(1) find() time complexity and hashing that easily retrives values by key. After the meal is retrived from the user input, checkValidInput() and readitems() are used to ensure the input order is valid. If not valid, the program will return "Unable to process: <specifc reason>". If able to process, readItems() returns a vector of ints where each element in the vector is the count of the number of items ordered with repect to the items in the menu for the corresponding meal. I chose to do this because it allows for the number of items to be printed when necessary (i.e for coffee and chips), as well as output the order in a unified manner for breakfast, lunch, and dinner. printOrder() uses the meal input as a key to effciently retrived data from the correct element in menu to be printed which allows for breakfast, lunch, and dinner to print similarly. Using string concatenation, the right output is returned by concatenating the retrived menu items, commas, and "Water," if necessary which reduces redunancy. 
