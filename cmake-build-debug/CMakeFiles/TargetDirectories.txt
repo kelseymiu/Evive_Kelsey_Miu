@@ -1,0 +1,3 @@
+/Users/alexeum/Desktop/kelsey/Evive_Kelsey_Miu/cmake-build-debug/CMakeFiles/evive.dir
+/Users/alexeum/Desktop/kelsey/Evive_Kelsey_Miu/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alexeum/Desktop/kelsey/Evive_Kelsey_Miu/cmake-build-debug/CMakeFiles/rebuild_cache.dir
